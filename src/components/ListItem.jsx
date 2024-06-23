@@ -5,12 +5,13 @@ import Modal from "./Modal";
 import axios from "axios";
 
 
-function ListItem({task,getData}){ 
+function ListItem({task,getData}){
+    const serverUrl = import.meta.env.VITE_SERVERURL; 
     const [showModal,setShowModal]=useState(false);
 
     async function deleteItem(){
         try {
-            const response=await axios.delete(`http://localhost:4000/todos/${task.id}`);
+            const response=await axios.delete(`${serverUrl}/todos/${task.id}`);
             if(response.status===200){
                 getData();
             }
