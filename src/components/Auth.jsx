@@ -37,6 +37,7 @@ function Auth(){
         <div className="auth-container">
             <div className="auth-container-box">
                 <form>
+                    <h1>To Do App</h1>
                     <h2>{isLogIn ? "please login " : "please sign up"}</h2>
                     <input
                         type="email"
