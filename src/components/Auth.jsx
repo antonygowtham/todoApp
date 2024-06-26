@@ -31,6 +31,7 @@ function Auth(){
         if(response.data.failed){
             setError(response.data.failed);
         }else{
+            console.log(response.data)
             setCookie('Email',response.data.email);
             setCookie('AuthToken',response.data.token);
             window.location.reload();
