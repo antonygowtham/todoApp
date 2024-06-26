@@ -19,6 +19,10 @@ function Auth(){
 
     async function handleSubmit(e,endpoint){
         e.preventDefault();
+        if(!email || !password){
+            setError("pelase fill the form !")
+            return
+        }
         if(!isLogIn && password !== confirmPassword){
             setError('make sure password match')
             return
@@ -43,11 +47,13 @@ function Auth(){
                         type="email"
                         placeholder="email"
                         onChange={(e)=>setEmail(e.target.value)}
+                        required
                     />
                     <input 
                         type="password" 
                         placeholder="password"
                         onChange={(e)=>setPassword(e.target.value)}
+                        required
                     />
                     {!isLogIn && <input 
                         type="password" 
